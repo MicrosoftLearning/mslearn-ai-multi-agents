@@ -197,8 +197,11 @@ for iteration_number in range(1, max_iterations + 1):
     conversation=conversation_id,
     input=next_input,
   )
-  visible_text = extract_text(response).strip()
-  status = "MISSING"
+print("\n========== AGENT RESPONSE ==========")
+print(repr(response.output_text))
+print("====================================\n")
+visible_text = extract_text(response).strip()
+status = "MISSING"
 
   for line in visible_text.splitlines():
     label, separator, value = line.partition(":")
